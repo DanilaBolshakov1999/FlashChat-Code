@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct K {
     static let appName = "⚡️FlashChat"
@@ -22,6 +23,11 @@ struct K {
         static let lightPurple = "BrandLightPurple"
         static let blue = "BrandBlue"
         static let lightBlue = "BrandLightBlue"
+    }
+    
+    struct Size {
+        static let buttonSize: CGFloat = 48
+        static let buttoOffset: CGFloat = 8
     }
     
     struct FStore {
