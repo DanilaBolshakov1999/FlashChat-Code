@@ -10,49 +10,51 @@ import SnapKit
 
 class WelcomeViewController: UIViewController {
     
-    //MARK: - UI
+    // MARK: - UI
+    
     private lazy var titleLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = UIColor(named: K.BrandColors.blue)
-        label.font = .systemFont(ofSize: 50, weight: .black)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
+        let element = UILabel()
+        element.textColor = UIColor(named: K.BrandColors.blue)
+        element.font = .systemFont(ofSize: 50, weight: .black)
+        element.translatesAutoresizingMaskIntoConstraints = false
+        return element
     }()
     
-    //MARK: - UI
-
-   let loginButton = UIButton(
-    titleColor: .white,
-    backgroundColor: .systemTeal
-   )
-    
     let registerButton = UIButton(
-     titleColor: UIColor(named: K.BrandColors.blue),
-     backgroundColor: UIColor(named: K.BrandColors.lightBlue)
+        titleColor: UIColor(named: K.BrandColors.blue),
+        backgroundColor: UIColor(named: K.BrandColors.lightBlue)
     )
     
-    //MARK: - Life Cycle
+    let logInButton = UIButton(
+        titleColor: .white,
+        backgroundColor: .systemTeal
+    )
+    
+    // MARK: - Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setViews()
-        setupConstrains()
+        setupConstraints()
         animationText()
     }
-
-    //MARK: - Set Views
+    
+    // MARK: - Set Views
     
     private func setViews() {
         view.backgroundColor = .white
+        navigationController?.navigationBar.tintColor = .systemYellow
+        
         view.addSubview(titleLabel)
-        view.addSubview(loginButton)
+        view.addSubview(logInButton)
         view.addSubview(registerButton)
         
-        loginButton.setTitle(K.loginInName, for: .normal)
         registerButton.setTitle(K.registerName, for: .normal)
+        logInButton.setTitle(K.logInName, for: .normal)
         
-        registerButton.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
-        loginButton.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+        registerButton.addTarget(self, action: #selector(buttonsTapped), for: .touchUpInside)
+        logInButton.addTarget(self, action: #selector(buttonsTapped), for: .touchUpInside)
     }
     
     private func animationText() {
@@ -64,41 +66,44 @@ class WelcomeViewController: UIViewController {
                 self.titleLabel.text! += String(letter.element)
             }
         }
-
     }
-
-    @objc private func buttonTapped(_ sender: UIButton) {
+    
+    @objc private func buttonsTapped(_ sender: UIButton) {
         let nextVC = RegisterViewController()
         
         if sender.currentTitle == K.registerName {
             nextVC.authorizationType = .register
-        } else if sender.currentTitle == K.loginInName {
+        } else if sender.currentTitle == K.logInName {
             nextVC.authorizationType = .logIn
         }
         
         navigationController?.pushViewController(nextVC, animated: true)
     }
+
 }
 
-//MARK: - Setup Constrains
+// MARK: - Setup Constraints
 
 extension WelcomeViewController {
     
-    private func setupConstrains() {
+    private func setupConstraints() {
+        
         titleLabel.snp.makeConstraints { make in
             make.center.equalToSuperview()
         }
         
-        loginButton.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview().inset(10)
+        logInButton.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview()
             make.height.equalTo(K.Size.buttonSize)
             make.bottom.equalTo(view.safeAreaLayoutGuide)
+            make.leading.trailing.equalTo(view.safeAreaLayoutGuide).offset(24)
         }
         
         registerButton.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview().inset(10)
+            make.leading.trailing.equalToSuperview()
             make.height.equalTo(K.Size.buttonSize)
-            make.bottom.equalTo(loginButton.snp.top).offset(-K.Size.buttoOffset)
+            make.bottom.equalTo(logInButton.snp.top).offset(-K.Size.buttonOffset)
+            make.leading.trailing.equalTo(view.safeAreaLayoutGuide).offset(24)
         }
     }
 }

@@ -5,17 +5,23 @@
 //  Created by iOS - Developer on 16.08.2023.
 //
 
-import Foundation
 import UIKit
 
 struct K {
     static let appName = "⚡️FlashChat"
-    static let loginInName = "Login In"
+    static let logInName = "Log In"
     static let registerName = "Register"
-    static let email = "Email"
+    static let emailName = "Email"
     static let passwordName = "Password"
     
+    static let enterButtonImageName = "paperplane.fill"
+    static let enterMessagePlaceholder = "Write a message..."
+    
+    static let meAvatar = "MeAvatar"
+    static let youAvatar = "YouAvatar"
+    
     static let cellIdentifier = "MessageCell"
+    
     static let textfieldImageName = "textfield"
     
     struct BrandColors {
@@ -27,7 +33,7 @@ struct K {
     
     struct Size {
         static let buttonSize: CGFloat = 48
-        static let buttoOffset: CGFloat = 8
+        static let buttonOffset: CGFloat = 8
     }
     
     struct FStore {
@@ -37,4 +43,3 @@ struct K {
         static let dateField = "date"
     }
 }
-

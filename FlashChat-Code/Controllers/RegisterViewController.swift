@@ -8,101 +8,105 @@
 import UIKit
 import SnapKit
 
+enum AuthorizationType: String {
+    case register = "Register"
+    case logIn = "Log In"
+}
+
 class RegisterViewController: UIViewController {
     
-    enum AuthorizationType: String {
-        case register = "Register"
-        case logIn = "Login In"
-    }
-    
-    //MARK: - UI
+    // MARK: - UI
     
     private lazy var mainStackView: UIStackView = {
         let element = UIStackView()
         element.axis = .vertical
         element.spacing = 8
+        element.translatesAutoresizingMaskIntoConstraints = false
         return element
     }()
-   
-    private let emailTextFiled = UITextField(
-        placeholder: K.email,
-        color: UIColor(named: K.BrandColors.blue)!
+    
+    let emailTextField = UITextField(
+        placeholder: K.emailName,
+        color: UIColor(named: K.BrandColors.blue)
     )
     
-    private let passwordTextFiled = UITextField(
+    private lazy var imageView: UIImageView = {
+        let element = UIImageView()
+        element.isUserInteractionEnabled = true
+        element.image = UIImage(named: K.textfieldImageName)
+        element.translatesAutoresizingMaskIntoConstraints = false
+        return element
+    }()
+    
+    private let passwordTextField = UITextField(
         placeholder: K.passwordName,
         color: .black
     )
     
-    private lazy var imageView: UIImageView = {
-        let image = UIImageView()
-        image.image = UIImage(named: K.textfieldImageName)
-        image.translatesAutoresizingMaskIntoConstraints = false
-        return image
-    }()
-    
     let registerButton = UIButton(titleColor: UIColor(named: K.BrandColors.blue))
     
-    //MARK: - Public Property
+    // MARK: - Public Properties
     
     public var authorizationType: AuthorizationType?
     
-    //MARK: - Life Cycle
+    // MARK: - Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setViews()
-        setupConstrains()
+        setupConstraints()
     }
-
-    //MARK: - Set Views
+    
+    // MARK: - Set Views
     
     private func setViews() {
-        
         switch authorizationType {
         case .register:
             view.backgroundColor = UIColor(named: K.BrandColors.lightBlue)
             registerButton.setTitle(K.registerName, for: .normal)
         case .logIn:
             view.backgroundColor = UIColor(named: K.BrandColors.blue)
-            registerButton.setTitle(K.loginInName, for: .normal)
+            registerButton.setTitle(K.logInName, for: .normal)
             registerButton.setTitleColor(.white, for: .normal)
             
-            emailTextFiled.text = "Danila1999777@gmai.com"
-        default:
-            break
+            emailTextField.text = "1@1.com"
+        default: break
         }
         
         view.addSubview(mainStackView)
-        mainStackView.addArrangedSubview(emailTextFiled)
+        mainStackView.addArrangedSubview(emailTextField)
         mainStackView.addArrangedSubview(imageView)
-        imageView.addSubview(passwordTextFiled)
+        imageView.addSubview(passwordTextField)
         mainStackView.addArrangedSubview(registerButton)
         
-        emailTextFiled.makeShadow()
-        registerButton.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+        emailTextField.makeShadow()
+        passwordTextField.isSecureTextEntry = true
+        
+        registerButton.addTarget(self, action: #selector(buttonsTapped), for: .touchUpInside)
     }
-
-    @objc private func buttonTapped(_ sender: UIButton) {
-        if sender.currentTitle == K.loginInName {
+    
+    @objc private func buttonsTapped(_ sender: UIButton) {
+        if sender.currentTitle == K.logInName {
             let chatVC = ChatViewController()
             navigationController?.pushViewController(chatVC, animated: true)
-        } else if sender.currentTitle == K.registerName {
-            print("registerName")
+        } else {
+            print("register")
         }
+
     }
 }
 
-//MARK: - Setup Constrains
+// MARK: - Setup Constraints
 
 extension RegisterViewController {
     
-    private func setupConstrains() {
+    private func setupConstraints() {
         mainStackView.snp.makeConstraints { make in
             make.top.leading.trailing.equalTo(view.safeAreaLayoutGuide)
         }
         
-        emailTextFiled.snp.makeConstraints { make in
+        emailTextField.snp.makeConstraints { make in
             make.height.equalTo(60)
             make.leading.trailing.equalTo(view).inset(36)
         }
@@ -112,7 +116,7 @@ extension RegisterViewController {
             make.leading.trailing.equalTo(view)
         }
         
-        passwordTextFiled.snp.makeConstraints { make in
+        passwordTextField.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(30)
             make.bottom.equalToSuperview().offset(-62)
             make.leading.trailing.equalToSuperview().inset(48)
