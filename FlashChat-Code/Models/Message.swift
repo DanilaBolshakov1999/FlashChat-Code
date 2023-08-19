@@ -19,7 +19,15 @@ struct Message {
 extension Message {
     static func getMassage() -> [Message] {
         return [
-        
+            Message(sender: .you , body: "What is the capital of France?"),
+            Message(sender: .you , body: "What is the capital of France?"),
+            Message(sender: .you , body: "What is the capital of France?"),
+            Message(sender: .you , body: "What is the capital of France?"),
+            Message(sender: .you , body: "What is the capital of France?"),
+            Message(sender: .you , body: "What is the capital of France?"),
+            Message(sender: .you , body: "What is the capital of France?"),
+            Message(sender: .you , body: "What is the capital of France?"),
+            Message(sender: .you , body: "What is the capital of France?")
         ]
     }
 }

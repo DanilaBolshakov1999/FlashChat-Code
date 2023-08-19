@@ -45,6 +45,10 @@ class ChatViewController: UIViewController {
         return label
     }()
     
+    //MARK: - Private Properties
+    
+    let messages = Message.getMassage()
+    
     //MARK: - Life Cycle
     
     override func viewDidLoad() {
@@ -78,14 +82,15 @@ class ChatViewController: UIViewController {
 extension ChatViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return messages.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.cellIdentifier, for: indexPath)
     
         var content = cell.defaultContentConfiguration()
-        content.text = "Cell number: \(indexPath.row + 1)"
+        let model = messages[indexPath.row]
+        content.text = model.body
 
         cell.contentConfiguration = content
         
