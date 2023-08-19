@@ -9,22 +9,36 @@
 /* Begin PBXBuildFile section */
 		444967CB2A8CCC4000D9C6D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444967CA2A8CCC4000D9C6D6 /* AppDelegate.swift */; };
 		444967CD2A8CCC4000D9C6D6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444967CC2A8CCC4000D9C6D6 /* SceneDelegate.swift */; };
-		444967CF2A8CCC4000D9C6D6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444967CE2A8CCC4000D9C6D6 /* ViewController.swift */; };
+		444967CF2A8CCC4000D9C6D6 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444967CE2A8CCC4000D9C6D6 /* WelcomeViewController.swift */; };
 		444967D72A8CCC4100D9C6D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 444967D52A8CCC4100D9C6D6 /* LaunchScreen.storyboard */; };
-		444967E32A8CDE1E00D9C6D6 /* Contacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444967E22A8CDE1E00D9C6D6 /* Contacts.swift */; };
-		444967E52A8CDFA100D9C6D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 444967E42A8CDFA100D9C6D6 /* Assets.xcassets */; };
+		444967E32A8CDE1E00D9C6D6 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444967E22A8CDE1E00D9C6D6 /* Contact.swift */; };
 		444967E82A8CE19900D9C6D6 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 444967E72A8CE19900D9C6D6 /* SnapKit */; };
+		444967EA2A8CF06500D9C6D6 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444967E92A8CF06500D9C6D6 /* RegisterViewController.swift */; };
+		444967EC2A8E1E5600D9C6D6 /* UIKit + Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444967EB2A8E1E5600D9C6D6 /* UIKit + Extention.swift */; };
+		444967F02A8E974100D9C6D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 444967EF2A8E974100D9C6D6 /* Assets.xcassets */; };
+		449EE87A2A8F935B00665C99 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449EE8792A8F935B00665C99 /* ChatViewController.swift */; };
+		449EE87C2A8FD5A300665C99 /* UIButton + Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449EE87B2A8FD5A300665C99 /* UIButton + Extention.swift */; };
+		449EE87E2A8FD67300665C99 /* UITextField + Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449EE87D2A8FD67300665C99 /* UITextField + Extention.swift */; };
+		449EE8802A90FB9400665C99 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 449EE87F2A90FB9400665C99 /* Storyboard.storyboard */; };
+		449EE8822A9109BE00665C99 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449EE8812A9109BE00665C99 /* Message.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		444967C72A8CCC4000D9C6D6 /* FlashChat-Code.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FlashChat-Code.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		444967CA2A8CCC4000D9C6D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		444967CC2A8CCC4000D9C6D6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		444967CE2A8CCC4000D9C6D6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		444967CE2A8CCC4000D9C6D6 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		444967D62A8CCC4100D9C6D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		444967D82A8CCC4100D9C6D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		444967E22A8CDE1E00D9C6D6 /* Contacts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contacts.swift; sourceTree = "<group>"; };
-		444967E42A8CDFA100D9C6D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../../../../../../Desktop/Flash-Chat-iOS13/Flash Chat iOS13/Assets.xcassets"; sourceTree = "<group>"; };
+		444967E22A8CDE1E00D9C6D6 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		444967E92A8CF06500D9C6D6 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		444967EB2A8E1E5600D9C6D6 /* UIKit + Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIKit + Extention.swift"; sourceTree = "<group>"; };
+		444967EF2A8E974100D9C6D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		449EE8792A8F935B00665C99 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		449EE87B2A8FD5A300665C99 /* UIButton + Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + Extention.swift"; sourceTree = "<group>"; };
+		449EE87D2A8FD67300665C99 /* UITextField + Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField + Extention.swift"; sourceTree = "<group>"; };
+		449EE87F2A90FB9400665C99 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		449EE8812A9109BE00665C99 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,8 +75,9 @@
 				444967CA2A8CCC4000D9C6D6 /* AppDelegate.swift */,
 				444967CC2A8CCC4000D9C6D6 /* SceneDelegate.swift */,
 				444967D52A8CCC4100D9C6D6 /* LaunchScreen.storyboard */,
+				449EE87F2A90FB9400665C99 /* Storyboard.storyboard */,
 				444967E12A8CCD1A00D9C6D6 /* Models */,
-				444967E02A8CCD0400D9C6D6 /* ViewController */,
+				444967E02A8CCD0400D9C6D6 /* Controllers */,
 				444967DF2A8CCCF400D9C6D6 /* Extention */,
 				444967DE2A8CCC9F00D9C6D6 /* Resources */,
 				444967D82A8CCC4100D9C6D6 /* Info.plist */,
@@ -73,7 +88,7 @@
 		444967DE2A8CCC9F00D9C6D6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				444967E42A8CDFA100D9C6D6 /* Assets.xcassets */,
+				444967EF2A8E974100D9C6D6 /* Assets.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -81,22 +96,28 @@
 		444967DF2A8CCCF400D9C6D6 /* Extention */ = {
 			isa = PBXGroup;
 			children = (
-				444967E22A8CDE1E00D9C6D6 /* Contacts.swift */,
+				444967E22A8CDE1E00D9C6D6 /* Contact.swift */,
+				444967EB2A8E1E5600D9C6D6 /* UIKit + Extention.swift */,
+				449EE87B2A8FD5A300665C99 /* UIButton + Extention.swift */,
+				449EE87D2A8FD67300665C99 /* UITextField + Extention.swift */,
 			);
 			path = Extention;
 			sourceTree = "<group>";
 		};
-		444967E02A8CCD0400D9C6D6 /* ViewController */ = {
+		444967E02A8CCD0400D9C6D6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				444967CE2A8CCC4000D9C6D6 /* ViewController.swift */,
+				444967CE2A8CCC4000D9C6D6 /* WelcomeViewController.swift */,
+				444967E92A8CF06500D9C6D6 /* RegisterViewController.swift */,
+				449EE8792A8F935B00665C99 /* ChatViewController.swift */,
 			);
-			path = ViewController;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		444967E12A8CCD1A00D9C6D6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				449EE8812A9109BE00665C99 /* Message.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -165,8 +186,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				444967F02A8E974100D9C6D6 /* Assets.xcassets in Resources */,
 				444967D72A8CCC4100D9C6D6 /* LaunchScreen.storyboard in Resources */,
-				444967E52A8CDFA100D9C6D6 /* Assets.xcassets in Resources */,
+				449EE8802A90FB9400665C99 /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,10 +199,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				444967E32A8CDE1E00D9C6D6 /* Contacts.swift in Sources */,
-				444967CF2A8CCC4000D9C6D6 /* ViewController.swift in Sources */,
+				449EE87C2A8FD5A300665C99 /* UIButton + Extention.swift in Sources */,
+				444967E32A8CDE1E00D9C6D6 /* Contact.swift in Sources */,
+				449EE87E2A8FD67300665C99 /* UITextField + Extention.swift in Sources */,
+				444967EA2A8CF06500D9C6D6 /* RegisterViewController.swift in Sources */,
+				444967CF2A8CCC4000D9C6D6 /* WelcomeViewController.swift in Sources */,
+				449EE87A2A8F935B00665C99 /* ChatViewController.swift in Sources */,
 				444967CB2A8CCC4000D9C6D6 /* AppDelegate.swift in Sources */,
+				449EE8822A9109BE00665C99 /* Message.swift in Sources */,
 				444967CD2A8CCC4000D9C6D6 /* SceneDelegate.swift in Sources */,
+				444967EC2A8E1E5600D9C6D6 /* UIKit + Extention.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,6 +354,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -353,6 +382,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
