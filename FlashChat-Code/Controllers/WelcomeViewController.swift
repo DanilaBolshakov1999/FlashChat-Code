@@ -96,7 +96,7 @@ extension WelcomeViewController {
             make.leading.trailing.equalToSuperview()
             make.height.equalTo(K.Size.buttonSize)
             make.bottom.equalTo(view.safeAreaLayoutGuide)
-            make.leading.trailing.equalTo(view.safeAreaLayoutGuide).offset(24)
+            make.leading.trailing.equalTo(view.safeAreaLayoutGuide).offset(20)
         }
         
         registerButton.snp.makeConstraints { make in

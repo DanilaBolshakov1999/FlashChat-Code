@@ -25,10 +25,10 @@ struct K {
     static let textfieldImageName = "textfield"
     
     struct BrandColors {
-        static let purple = "BrandPurple"
-        static let lightPurple = "BrandLightPurple"
-        static let blue = "BrandBlue"
-        static let lightBlue = "BrandLightBlue"
+        static let purple = "brandPurple"
+        static let lightPurple = "brandLightPurple"
+        static let blue = "brandBlue"
+        static let lightBlue = "brandLightBlue"
     }
     
     struct Size {
