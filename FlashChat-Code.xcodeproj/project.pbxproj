@@ -19,8 +19,9 @@
 		449EE87A2A8F935B00665C99 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449EE8792A8F935B00665C99 /* ChatViewController.swift */; };
 		449EE87C2A8FD5A300665C99 /* UIButton + Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449EE87B2A8FD5A300665C99 /* UIButton + Extention.swift */; };
 		449EE87E2A8FD67300665C99 /* UITextField + Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449EE87D2A8FD67300665C99 /* UITextField + Extention.swift */; };
-		449EE8802A90FB9400665C99 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 449EE87F2A90FB9400665C99 /* Storyboard.storyboard */; };
 		449EE8822A9109BE00665C99 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449EE8812A9109BE00665C99 /* Message.swift */; };
+		449EE8852A9126FA00665C99 /* Messege Call.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449EE8842A9126FA00665C99 /* Messege Call.swift */; };
+		449EE8872A91EC3800665C99 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 449EE8862A91EC3800665C99 /* Storyboard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,8 +38,9 @@
 		449EE8792A8F935B00665C99 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		449EE87B2A8FD5A300665C99 /* UIButton + Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + Extention.swift"; sourceTree = "<group>"; };
 		449EE87D2A8FD67300665C99 /* UITextField + Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField + Extention.swift"; sourceTree = "<group>"; };
-		449EE87F2A90FB9400665C99 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		449EE8812A9109BE00665C99 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		449EE8842A9126FA00665C99 /* Messege Call.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Messege Call.swift"; sourceTree = "<group>"; };
+		449EE8862A91EC3800665C99 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,11 +74,12 @@
 		444967C92A8CCC4000D9C6D6 /* FlashChat-Code */ = {
 			isa = PBXGroup;
 			children = (
-				444967CA2A8CCC4000D9C6D6 /* AppDelegate.swift */,
 				444967CC2A8CCC4000D9C6D6 /* SceneDelegate.swift */,
 				444967D52A8CCC4100D9C6D6 /* LaunchScreen.storyboard */,
-				449EE87F2A90FB9400665C99 /* Storyboard.storyboard */,
+				449EE8862A91EC3800665C99 /* Storyboard.storyboard */,
+				444967CA2A8CCC4000D9C6D6 /* AppDelegate.swift */,
 				444967E12A8CCD1A00D9C6D6 /* Models */,
+				449EE8832A9126C700665C99 /* Views */,
 				444967E02A8CCD0400D9C6D6 /* Controllers */,
 				444967DF2A8CCCF400D9C6D6 /* Extention */,
 				444967DE2A8CCC9F00D9C6D6 /* Resources */,
@@ -120,6 +123,14 @@
 				449EE8812A9109BE00665C99 /* Message.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		449EE8832A9126C700665C99 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				449EE8842A9126FA00665C99 /* Messege Call.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,7 +199,7 @@
 			files = (
 				444967F02A8E974100D9C6D6 /* Assets.xcassets in Resources */,
 				444967D72A8CCC4100D9C6D6 /* LaunchScreen.storyboard in Resources */,
-				449EE8802A90FB9400665C99 /* Storyboard.storyboard in Resources */,
+				449EE8872A91EC3800665C99 /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,6 +210,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				449EE8852A9126FA00665C99 /* Messege Call.swift in Sources */,
 				449EE87C2A8FD5A300665C99 /* UIButton + Extention.swift in Sources */,
 				444967E32A8CDE1E00D9C6D6 /* Contact.swift in Sources */,
 				449EE87E2A8FD67300665C99 /* UITextField + Extention.swift in Sources */,
