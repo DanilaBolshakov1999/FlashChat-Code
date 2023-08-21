@@ -17,8 +17,10 @@ struct K {
     static let enterButtonImageName = "paperplane.fill"
     static let enterMessagePlaceholder = "Write a message..."
     
-    static let meAvatar = "MeAvatar"
-    static let youAvatar = "YouAvatar"
+    static let meAvatar = "meAvatar"
+    static let youAvatar = "youAvatar"
+    
+    static let image = "paperplane"
     
     static let cellIdentifier = "MessageCell"
     

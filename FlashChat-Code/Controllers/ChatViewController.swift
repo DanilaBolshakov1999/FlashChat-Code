@@ -64,7 +64,7 @@ class ChatViewController: UIViewController {
         title = K.appName
         navigationController?.navigationBar.barTintColor = UIColor(named: K.BrandColors.blue)
         tableView.backgroundColor = .white
-        tableView.register(UITableViewCell.self , forCellReuseIdentifier: K.cellIdentifier)
+        tableView.register(MessageCell.self , forCellReuseIdentifier: K.cellIdentifier)
         view.addSubview(tableView)
         view.addSubview(containerView)
         containerView.addSubview(messageTextField)
@@ -86,14 +86,13 @@ extension ChatViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: K.cellIdentifier, for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: K.cellIdentifier, for: indexPath) as? MessageCell else { fatalError() }
     
         var content = cell.defaultContentConfiguration()
         let model = messages[indexPath.row]
         content.text = model.body
-
         cell.contentConfiguration = content
-        
+        cell.configure(model: model)
         return cell
     }
 }
