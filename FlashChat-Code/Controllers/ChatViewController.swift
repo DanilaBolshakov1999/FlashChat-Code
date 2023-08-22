@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ChatViewController: UIViewController {
+final class ChatViewController: UIViewController {
     
     //MARK: - UI
     
@@ -40,14 +40,14 @@ class ChatViewController: UIViewController {
     
     private lazy var labelTableView: UILabel = {
         let label = UILabel()
-        label.text = "Hello"
+        label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     //MARK: - Private Properties
     
-    let messages = Message.getMassage()
+    var messages = Message.getMassage()
     
     //MARK: - Life Cycle
     
@@ -65,15 +65,31 @@ class ChatViewController: UIViewController {
         navigationController?.navigationBar.barTintColor = UIColor(named: K.BrandColors.blue)
         tableView.backgroundColor = .white
         tableView.register(MessageCell.self , forCellReuseIdentifier: K.cellIdentifier)
+        tableView.separatorStyle = .none
+        tableView.showsVerticalScrollIndicator = false
         view.addSubview(tableView)
         view.addSubview(containerView)
         containerView.addSubview(messageTextField)
         containerView.addSubview(enterButton)
+        
+        enterButton.addTarget(self, action: #selector(tapEnterButton), for: .touchUpInside)
     }
     
     private func setDelegates() {
         tableView.dataSource = self
         tableView.delegate = self
+    }
+    
+    //MARK: - Actions
+    
+    @objc private func tapEnterButton() {
+        if let text = messageTextField.text, !text.isEmpty {
+            messages.append(Message(sender: .me, body: text))
+            messageTextField.text = ""
+            tableView.reloadData()
+            let indexPath = IndexPath(row: messages.count - 1, section: 0)
+            tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
+        }
     }
 }
 
@@ -87,12 +103,8 @@ extension ChatViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: K.cellIdentifier, for: indexPath) as? MessageCell else { fatalError() }
-    
-        var content = cell.defaultContentConfiguration()
         let model = messages[indexPath.row]
-        content.text = model.body
-        cell.contentConfiguration = content
-        cell.configure(model: model)
+        cell.configure(with: model)
         return cell
     }
 }
@@ -104,13 +116,13 @@ extension ChatViewController {
     private func setupConstrains() {
         tableView.snp.makeConstraints { make in
             make.top.leading.trailing.equalTo(view.safeAreaLayoutGuide)
-            //make.bottom.equalTo(containerView.snp.top)
         }
         
         containerView.snp.makeConstraints { make in
             make.leading.trailing.bottom.equalTo(view.safeAreaLayoutGuide)
             make.height.equalTo(60)
-            make.bottom.equalTo(tableView.snp.bottom)
+            make.top.equalTo(tableView.snp.bottom)
+           
         }
         
         messageTextField.snp.makeConstraints { make in
