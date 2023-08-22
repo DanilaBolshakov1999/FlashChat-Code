@@ -13,7 +13,7 @@ enum AuthorizationType: String {
     case logIn = "Log In"
 }
 
-class RegisterViewController: UIViewController {
+final class RegisterViewController: UIViewController {
     
     // MARK: - UI
     

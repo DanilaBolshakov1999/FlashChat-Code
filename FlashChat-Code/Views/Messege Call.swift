@@ -14,7 +14,10 @@ class MessageCell: UITableViewCell {
     private lazy var mainStackViews: UIStackView = {
         let stack = UIStackView()
         stack.axis = .horizontal
-        stack.spacing = 20
+        stack.spacing = 10
+        stack.contentMode = .scaleToFill
+        stack.distribution = .fill
+        stack.alignment = .center
         stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
     }()
@@ -41,12 +44,19 @@ class MessageCell: UITableViewCell {
     
     private lazy var messageLabel: UILabel = {
         let label = UILabel()
+        label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     //MARK: - Life Cycle
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        messageView.layoutIfNeeded()
+        //messageView.frame = contentView.bounds
+        messageView.layer.cornerRadius = messageView.frame.size.height / 4
+    }
     //MARK: - Init
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -61,7 +71,19 @@ class MessageCell: UITableViewCell {
     
     //MARK: - Public Properties
     
-    public func configure(model: Message) {
+    public func configure(with model: Message) {
+        switch model.sender {
+        case .me:
+            leftImageView.isHidden = true
+            rightImageView.isHidden = false
+            messageView.backgroundColor = UIColor(named: K.BrandColors.lightPurple)
+            messageLabel.textColor = UIColor(named: K.BrandColors.purple)
+        case .you:
+            leftImageView.isHidden = false
+            rightImageView.isHidden = true
+            messageView.backgroundColor = UIColor(named: K.BrandColors.purple)
+            messageLabel.textColor = UIColor(named: K.BrandColors.lightPurple)
+        }
         messageLabel.text = model.body
     }
     
@@ -80,19 +102,19 @@ class MessageCell: UITableViewCell {
 extension MessageCell {
     private func setupConstrains() {
         mainStackViews.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview().inset(10)
+            make.edges.equalToSuperview().inset(10)
         }
         
         messageLabel.snp.makeConstraints { make in
-            make.edges.equalToSuperview().inset(20)
+            make.height.equalToSuperview().inset(10)
         }
         
         leftImageView.snp.makeConstraints { make in
-            make.height.width.equalTo(40)
+            make.width.height.equalTo(40)
         }
         
         rightImageView.snp.makeConstraints { make in
-            make.height.width.equalTo(40)
+            make.width.height.equalTo(40)
         }
     }
 }

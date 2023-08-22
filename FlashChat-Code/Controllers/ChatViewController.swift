@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ChatViewController: UIViewController {
+final class ChatViewController: UIViewController {
     
     //MARK: - UI
     
@@ -47,7 +47,7 @@ class ChatViewController: UIViewController {
     
     //MARK: - Private Properties
     
-    let messages = Message.getMassage()
+    var messages = Message.getMassage()
     
     //MARK: - Life Cycle
     
@@ -65,15 +65,28 @@ class ChatViewController: UIViewController {
         navigationController?.navigationBar.barTintColor = UIColor(named: K.BrandColors.blue)
         tableView.backgroundColor = .white
         tableView.register(MessageCell.self , forCellReuseIdentifier: K.cellIdentifier)
+        tableView.separatorStyle = .none
         view.addSubview(tableView)
         view.addSubview(containerView)
         containerView.addSubview(messageTextField)
         containerView.addSubview(enterButton)
+        
+        enterButton.addTarget(self, action: #selector(tapEnterButton), for: .touchUpInside)
     }
     
     private func setDelegates() {
         tableView.dataSource = self
         tableView.delegate = self
+    }
+    
+    //MARK: - Actions
+    
+    @objc private func tapEnterButton() {
+        if let text = messageTextField.text, !text.isEmpty {
+            messages.append(Message(sender: .me, body: text))
+            messageTextField.text = ""
+            tableView.reloadData()
+        }
     }
 }
 
@@ -87,12 +100,10 @@ extension ChatViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: K.cellIdentifier, for: indexPath) as? MessageCell else { fatalError() }
-    
-        var content = cell.defaultContentConfiguration()
+        
         let model = messages[indexPath.row]
-        content.text = model.body
-        cell.contentConfiguration = content
-        cell.configure(model: model)
+        cell.configure(with: model)
+        
         return cell
     }
 }
@@ -114,7 +125,7 @@ extension ChatViewController {
         }
         
         messageTextField.snp.makeConstraints { make in
-            make.leading.top.equalToSuperview().offset(20)
+            make.leading.top.equalToSuperview().offset(30)
         }
         
         enterButton.snp.makeConstraints { make in
