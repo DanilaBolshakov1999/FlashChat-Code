@@ -40,7 +40,7 @@ final class ChatViewController: UIViewController {
     
     private lazy var labelTableView: UILabel = {
         let label = UILabel()
-        label.text = "Hello"
+        label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -66,6 +66,7 @@ final class ChatViewController: UIViewController {
         tableView.backgroundColor = .white
         tableView.register(MessageCell.self , forCellReuseIdentifier: K.cellIdentifier)
         tableView.separatorStyle = .none
+        tableView.showsVerticalScrollIndicator = false
         view.addSubview(tableView)
         view.addSubview(containerView)
         containerView.addSubview(messageTextField)
@@ -86,6 +87,8 @@ final class ChatViewController: UIViewController {
             messages.append(Message(sender: .me, body: text))
             messageTextField.text = ""
             tableView.reloadData()
+            let indexPath = IndexPath(row: messages.count - 1, section: 0)
+            tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
         }
     }
 }
@@ -100,10 +103,8 @@ extension ChatViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: K.cellIdentifier, for: indexPath) as? MessageCell else { fatalError() }
-        
         let model = messages[indexPath.row]
         cell.configure(with: model)
-        
         return cell
     }
 }
@@ -115,17 +116,17 @@ extension ChatViewController {
     private func setupConstrains() {
         tableView.snp.makeConstraints { make in
             make.top.leading.trailing.equalTo(view.safeAreaLayoutGuide)
-            //make.bottom.equalTo(containerView.snp.top)
         }
         
         containerView.snp.makeConstraints { make in
             make.leading.trailing.bottom.equalTo(view.safeAreaLayoutGuide)
             make.height.equalTo(60)
-            make.bottom.equalTo(tableView.snp.bottom)
+            make.top.equalTo(tableView.snp.bottom)
+           
         }
         
         messageTextField.snp.makeConstraints { make in
-            make.leading.top.equalToSuperview().offset(30)
+            make.leading.top.equalToSuperview().offset(20)
         }
         
         enterButton.snp.makeConstraints { make in

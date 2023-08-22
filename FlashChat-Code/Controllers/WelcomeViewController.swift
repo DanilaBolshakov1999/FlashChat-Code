@@ -93,14 +93,14 @@ extension WelcomeViewController {
         }
         
         logInButton.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview()
+            make.leading.trailing.equalToSuperview().inset(40)
             make.height.equalTo(K.Size.buttonSize)
             make.bottom.equalTo(view.safeAreaLayoutGuide)
             make.leading.trailing.equalTo(view.safeAreaLayoutGuide).offset(20)
         }
         
         registerButton.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview()
+            make.leading.trailing.equalToSuperview().inset(40)
             make.height.equalTo(K.Size.buttonSize)
             make.bottom.equalTo(logInButton.snp.top).offset(-K.Size.buttonOffset)
             make.leading.trailing.equalTo(view.safeAreaLayoutGuide).offset(24)

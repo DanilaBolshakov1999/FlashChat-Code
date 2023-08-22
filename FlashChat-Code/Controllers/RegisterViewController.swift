@@ -70,8 +70,7 @@ final class RegisterViewController: UIViewController {
             registerButton.setTitle(K.logInName, for: .normal)
             registerButton.setTitleColor(.white, for: .normal)
             
-            emailTextField.text = "Danila1999777@gmail.com"
-            passwordTextField.text = "**********"
+            emailTextField.text = ""
             
         default: break
         }

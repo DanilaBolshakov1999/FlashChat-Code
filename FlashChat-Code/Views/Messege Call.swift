@@ -107,6 +107,7 @@ extension MessageCell {
         
         messageLabel.snp.makeConstraints { make in
             make.height.equalToSuperview().inset(10)
+            make.centerX.centerY.equalTo(mainStackViews)
         }
         
         leftImageView.snp.makeConstraints { make in
